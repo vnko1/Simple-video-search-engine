@@ -1,0 +1,25 @@
+{
+  "name": "vite-js-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "deploy": "gh-pages -d dist",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "sass": "^1.62.1",
+    "vite": "^4.3.2"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.4.0",
+    "lodash": "^4.17.21",
+    "modern-normalize": "^2.0.0",
+    "redux": "^4.2.1",
+    "redux-persist": "^6.0.0"
+  }
+}
