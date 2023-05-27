@@ -1,0 +1,27 @@
+.search-section {
+  padding-top: 20px;
+}
+
+.search-form-label {
+  position: relative;
+}
+.search-form-input {
+  width: 100%;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+.search-form-button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 16px;
+  cursor: pointer;
+}
