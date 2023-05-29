@@ -1,10 +1,11 @@
 import axios from "axios";
-const BASE_URL = "https://www.googleapis.com/customsearch/v1";
+// const BASE_URL = "https://www.googleapis.com/customsearch/v1";
 const API_KEY = "AIzaSyC6JURxa2KjjTgeOgWyyhspeCO_3o31nUs";
 const CX = "93fb8775a0c4043c8";
 const SITE_SEARCH = "youtube.com/music";
-axios.defaults.baseURL = BASE_URL;
+const BASE_URL = "https://www.googleapis.com/customsearch/v1";
 // const SITE_SEARCH_FILTER = "SITE_SEARCH_FILTER_I";
+axios.defaults.baseURL = BASE_URL;
 
 async function searchData(query, index = 1) {
   const data = await axios({
@@ -12,13 +13,13 @@ async function searchData(query, index = 1) {
       key: API_KEY,
       cx: CX,
       q: query,
-      sort: "viewCount",
-      siteSearch: SITE_SEARCH,
-      //   start: index,
+      start: index,
 
-      //   siteSearchFilter: SITE_SEARCH_FILTER,
+      siteSearch: SITE_SEARCH,
+      // sort: "interactionCount",
     },
   });
+
   console.log(data);
 }
 
