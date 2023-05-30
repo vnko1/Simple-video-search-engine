@@ -4,6 +4,7 @@ import millify from "millify";
 import { nanoid } from "nanoid";
 
 function formatData(response) {
+  console.log(response);
   if (response.queries.nextPage)
     searchVideo.setNextPageIndex(response.queries.nextPage[0].startIndex);
   else searchVideo.setNextPageIndex(null);
@@ -23,10 +24,11 @@ function formatData(response) {
         const duration = parse(el.pagemap.videoobject[0].duration);
         duration.minutes = duration.minutes.toString().padStart(2, "0");
         duration.seconds = duration.seconds.toString().padStart(2, "0");
-        const interactioncount = millify(
-          el.pagemap.videoobject[0].interactioncount,
-          { lowercase: true }
-        );
+        // const interactioncount = millify(
+        //   el.pagemap.videoobject[0].interactioncount
+        //   { lowercase: true }
+        // );
+
         pagemap = {
           desciption: el.pagemap.videoobject[0].description,
           duration,
@@ -34,13 +36,14 @@ function formatData(response) {
           name: el.pagemap.videoobject[0].name,
           url: el.pagemap.videoobject[0].url,
           thumbnailurl: el.pagemap.videoobject[0].thumbnailurl,
-          embedurl: el.pagemap.videoobject[0].embedurl,
+          identifier: el.pagemap.videoobject[0].identifier,
         };
       }
 
       return {
         displayLink: el.displayLink,
         formattedUrl: el.formattedUrl,
+        title: el.title,
         pagemap,
         id: nanoid(),
       };

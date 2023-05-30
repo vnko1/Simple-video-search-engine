@@ -12,7 +12,7 @@ class Search {
   constructor() {
     this.query = null;
     this.searchData = [];
-    this.pageIndex = 11;
+    this.pageIndex = 1;
     this.prevPageIndex = null;
     this.nextPageIndex = null;
     this.count = 0;
