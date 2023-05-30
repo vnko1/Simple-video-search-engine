@@ -12,9 +12,10 @@ class Search {
   constructor() {
     this.query = null;
     this.searchData = [];
-    this.pageIndex = 1;
+    this.pageIndex = 11;
     this.prevPageIndex = null;
     this.nextPageIndex = null;
+    this.count = 0;
   }
 
   getQuery() {
@@ -55,6 +56,14 @@ class Search {
 
   setNextPageIndex(newNextPageIndex) {
     this.nextPageIndex = newNextPageIndex;
+  }
+
+  getCount() {
+    return this.count;
+  }
+
+  setCount(newCount) {
+    this.count = newCount;
   }
 
   async fetchVideoSearch(pageIndex) {
