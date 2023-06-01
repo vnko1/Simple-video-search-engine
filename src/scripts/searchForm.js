@@ -1,4 +1,6 @@
 import { searchVideo, formatData } from "./services";
+import { renderSearchResults } from "./dataList";
+import { renderPaginationBar } from "./paginationBar";
 
 document
   .getElementById("searchForm")
@@ -16,13 +18,11 @@ async function onHandleSubmit(e) {
     );
 
     formatData(response);
+    renderSearchResults();
+    renderPaginationBar();
   } catch (error) {
     console.log(error);
   } finally {
-    search.value = "";
-    console.log(searchVideo.getSearchData());
-    console.log(searchVideo.getNextPageIndex());
-    console.log(searchVideo.getPrevPageIndex());
-    console.log(searchVideo.getCount());
+    // search.value = "";
   }
 }
