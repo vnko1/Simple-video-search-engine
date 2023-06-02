@@ -3,7 +3,6 @@
   background: #ffffff;
   border-radius: 6px;
   display: flex;
-  justify-content: space-between;
 }
 .pagination-btn {
   display: flex;
@@ -21,24 +20,21 @@
 
 .prev-page-btn {
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: 16px;
     height: 16px;
-    background-image: url("/src/assets/arrow.svg");
+    background-image: url('/src/assets/arrow.svg');
   }
 }
 
 .next-page-btn {
   &::after {
-    content: "";
+    content: '';
     display: block;
     width: 16px;
     height: 16px;
-    background-image: url("/src/assets/arrow.svg");
+    background-image: url('/src/assets/arrow.svg');
     transform: rotate(180deg);
   }
-}
-
-.page {
 }

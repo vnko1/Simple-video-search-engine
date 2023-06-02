@@ -1,2 +1,2 @@
 export { searchVideo } from "./Search";
-export { formatData } from "./functions";
+export { fetchSearch } from "./functions";

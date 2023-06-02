@@ -36,7 +36,9 @@
   border-radius: 2px;
   padding: 4px;
 }
-
+.content-wrapper {
+  max-width: 168px;
+}
 .content-text {
   font-weight: 600;
   font-size: 14px;
@@ -44,6 +46,8 @@
   letter-spacing: 0.0025em;
   color: #2b2f39;
   margin-bottom: 8px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .content-title {

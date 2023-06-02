@@ -1,28 +1,18 @@
-import { searchVideo, formatData } from "./services";
-import { renderSearchResults } from "./dataList";
-import { renderPaginationBar } from "./paginationBar";
+import { renderSearchBar } from './searchBar';
+import { searchVideo } from './services';
+import { fetchSearch } from '/src/scripts/services';
 
 document
-  .getElementById("searchForm")
-  .addEventListener("submit", onHandleSubmit);
+  .getElementById('searchForm')
+  .addEventListener('submit', onHandleSubmit);
 
 async function onHandleSubmit(e) {
   e.preventDefault();
   const { search } = e.currentTarget.elements;
 
   searchVideo.setQuery(search.value.trim());
-
-  try {
-    const response = await searchVideo.fetchVideoSearch(
-      searchVideo.getPageIndex()
-    );
-
-    formatData(response);
-    renderSearchResults();
-    renderPaginationBar();
-  } catch (error) {
-    console.log(error);
-  } finally {
-    // search.value = "";
-  }
+  const page = searchVideo.getPageIndex();
+  await fetchSearch(page);
+  renderSearchBar();
+  search.value = '';
 }

@@ -1,9 +1,24 @@
 import { searchVideo } from "./Search";
-import { parse } from "tinyduration";
+import { parse, serialize } from "tinyduration";
 import millify from "millify";
 import { nanoid } from "nanoid";
+import { renderSearchResults } from "/src/scripts/dataList";
+import { renderPaginationBar } from "/src/scripts/paginationBar";
+
+async function fetchSearch(page) {
+  try {
+    const response = await searchVideo.fetchVideoSearch(page);
+
+    formatData(response);
+    renderSearchResults();
+    renderPaginationBar();
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 function formatData(response) {
+  searchVideo.setPageIndex(response.queries.request[0].startIndex);
   if (response.queries.nextPage)
     searchVideo.setNextPageIndex(response.queries.nextPage[0].startIndex);
   else searchVideo.setNextPageIndex(null);
@@ -85,4 +100,4 @@ String.prototype.limit = function (limit, userParams) {
   return text + options.ending;
 };
 
-export { formatData };
+export { formatData, fetchSearch };

@@ -4,7 +4,7 @@ const listEl = document.getElementById("data-list");
 
 function renderSearchResults() {
   const searchData = searchVideo.getSearchData();
-  console.log(searchData);
+
   if (!searchData) return (listEl.innerHTML = renderNullSearchResult());
 
   const renderData = searchData.reduce((acc, el) => {

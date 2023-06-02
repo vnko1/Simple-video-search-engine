@@ -4,8 +4,8 @@ axios.defaults.baseURL = BASE_URL;
 
 class Search {
   static fetchParams = {
-    API_KEY: "AIzaSyC6JURxa2KjjTgeOgWyyhspeCO_3o31nUs",
-    CX: "93fb8775a0c4043c8",
+    API_KEY: "AIzaSyB4K1-z8_pALYP57RqTGdfqADuK2WnSKxw",
+    CX: "4532397386d1443d2",
     SITE_SEARCH: "youtube.com/watch",
   };
 
