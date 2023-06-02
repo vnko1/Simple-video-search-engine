@@ -12,11 +12,16 @@
       rel="stylesheet"
     />
     
-    <script type="module" crossorigin src="/simple-video-search-engine/assets/index-984236cf.js"></script>
-    <link rel="stylesheet" href="/simple-video-search-engine/assets/index-27a8e4da.css">
+    <script
+      async
+      src="https://cse.google.com/cse.js?cx=4532397386d1443d2"
+    ></script>
+    <script type="module" crossorigin src="/simple-video-search-engine/assets/index-d1e070b2.js"></script>
+    <link rel="stylesheet" href="/simple-video-search-engine/assets/index-df3b4203.css">
   </head>
   <body>
-    <div id="app"><section class="search-section">
+    <div id="app">
+      <section class="search-section">
   <div class="container search-form-container">
     <form class="search-form" id="searchForm">
       <label class="search-form-label"
@@ -37,7 +42,28 @@
  <section class="pagination-section">
   <div class="container pagination-container" id="pagination"></div>
 </section>
-</div>
+ <section class="searchBar-section">
+  <div class="container searchBar-container" id="searchBar">
+    <div
+      class="gcse-searchbox-only"
+      style="border: none; border-radius: 33"
+    ></div>
+    <!-- <div class="searchBar-wrapper">
+      <button type="click" class="searchBar-btn gcse-search">
+        <p class="searchBar-text-wrapper">
+          <span class="searchBar-text"
+            >Search<span class="searchBar-text-accent"> ${query} </span> on
+            Google</span
+          >
+        </p>
+      </button>
+    </div>
+    <div></div> -->
+  </div>
+</section>
+
+    </div>
+
     
   </body>
 </html>
