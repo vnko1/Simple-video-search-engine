@@ -17,7 +17,7 @@ function renderPaginationBar() {
   const page = Math.floor(searchVideo.getPageIndex() / searchVideo.getCount());
   let markUp = null;
 
-  if (!searchVideo.getSearchData()) return;
+  if (!searchVideo.getSearchData()) return (paginationEl.innerHTML = '');
 
   if (page === 0 && searchVideo.getNextPageIndex()) {
     markUp = `<div class="pagination-wrapper" style="justify-content: center">
